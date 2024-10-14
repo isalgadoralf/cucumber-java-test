@@ -21,26 +21,26 @@ public class ClientePageDefinition {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origin=*");
         driver = new ChromeDriver(options);
-        driver.get("http://localhost/web/cliente.html");
+        driver.get("http://localhost:3000/cliente");
 
     }
     @When("completar todos los campos requeridos")
     public void completar_todos_los_campos_requeridos() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
         WebElement nombre = wait.until(ExpectedConditions.elementToBeClickable(By.id("nombre")));
-        nombre.sendKeys("Juan");
+        nombre.sendKeys("Pedro");
         WebElement apellido = wait.until(ExpectedConditions.elementToBeClickable(By.id("apellidos")));
-        apellido.sendKeys("PErez");
+        apellido.sendKeys("Picapiedra");
 
         WebElement numDocumento = wait.until(ExpectedConditions.elementToBeClickable(By.id("numDocumento")));
-        numDocumento.sendKeys("45421545");
+        numDocumento.sendKeys("123456879");
 
 
         WebElement tipoDocumento = wait.until(ExpectedConditions.elementToBeClickable(By.id("tipoDocumento")));
-        tipoDocumento.sendKeys("1");
+        tipoDocumento.sendKeys("2");
 
         WebElement codCliente = wait.until(ExpectedConditions.elementToBeClickable(By.id("codCliente")));
-        codCliente.sendKeys("C123");
+        codCliente.sendKeys("C001");
 
         WebElement email = wait.until(ExpectedConditions.elementToBeClickable(By.id("email")));
         email.sendKeys("dddd@dd.com");
